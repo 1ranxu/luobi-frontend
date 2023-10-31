@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import { login } from '@/services/ant-design-pro/api';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
+import { listChartVOByPageUsingPOST } from '@/services/luobi/chartController';
 import {
   AlipayCircleOutlined,
   LockOutlined,
@@ -18,7 +19,7 @@ import {
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { Helmet, history, useModel } from '@umijs/max';
 import { Alert, message, Tabs } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
 const ActionIcons = () => {
@@ -88,6 +89,11 @@ const Login: React.FC = () => {
       backgroundSize: '100% 100%',
     };
   });
+  useEffect(() => {
+    listChartVOByPageUsingPOST({}).then((res) => {
+      console.log(res)
+    });
+  }, []);
   const fetchUserInfo = async () => {
     const userInfo = await initialState?.fetchUserInfo?.();
     if (userInfo) {
