@@ -14,8 +14,9 @@ export const requestConfig: RequestConfig = {
   requestInterceptors: [
     (config: RequestOptions) => {
       // 拦截请求配置，进行个性化处理。
-      const url = config?.url?.concat('?token = 123');
-      return { ...config, url };
+      // const url = config?.url?.concat('?token = 123');
+      // return { ...config, url };
+      return config
     },
   ],
 
@@ -28,7 +29,7 @@ export const requestConfig: RequestConfig = {
       if (data?.code !== 0) {
         throw new Error(data.message);
       }
-      return data.data;
+      return response;
     },
   ],
 };
