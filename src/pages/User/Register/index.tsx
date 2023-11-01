@@ -7,6 +7,7 @@ import { Helmet, history } from '@umijs/max';
 import { message, Tabs } from 'antd';
 import React, { useState } from 'react';
 import Settings from '../../../../config/defaultSettings';
+import {Link} from "@@/exports";
 
 const Register: React.FC = () => {
   const [type, setType] = useState<string>('account');
@@ -128,7 +129,9 @@ const Register: React.FC = () => {
             style={{
               marginBottom: 24,
             }}
-          ></div>
+          >
+            <Link to="/user/login">登录</Link>
+          </div>
         </LoginForm>
       </div>
       <Footer />
