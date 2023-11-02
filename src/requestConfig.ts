@@ -1,5 +1,6 @@
-﻿import type {RequestOptions} from '@@/plugin-request/request';
-import type {RequestConfig} from '@umijs/max';
+﻿import type { RequestOptions } from '@@/plugin-request/request';
+// @ts-ignore
+import type { RequestConfig } from '@umijs/max';
 // 与后端约定的响应数据格式
 interface ResponseStructure {
   success: boolean;
@@ -7,16 +8,17 @@ interface ResponseStructure {
   errorCode?: number;
   errorMessage?: string;
 }
+// @ts-ignore
 export const requestConfig: RequestConfig = {
-  baseURL:'http://localhost:8084',
-  withCredentials:true,
+  baseURL: 'http://localhost:8084',
+  withCredentials: true,
   // 请求拦截器
   requestInterceptors: [
     (config: RequestOptions) => {
       // 拦截请求配置，进行个性化处理。
       // const url = config?.url?.concat('?token = 123');
       // return { ...config, url };
-      return config
+      return config;
     },
   ],
 

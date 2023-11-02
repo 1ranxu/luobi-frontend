@@ -7,7 +7,8 @@
       { path: '/user/register', component: './User/Register' },
     ],
   },
-  { path: '/welcome', name: '欢迎页', icon: 'smile', component: './Welcome' },
+  { path: '/', redirect: '/add/chart' },
+  { path: '/add/chart', name: '智能分析', icon: 'BarChartOutlined', component: './AddChart' },
   {
     path: '/admin',
     icon: 'crown',
@@ -17,7 +18,5 @@
       { path: '/admin/sub-page', name: '二级管理页', component: './Admin' },
     ],
   },
-  { icon: 'table', path: '/list', component: './TableList' },
-  { path: '/', redirect: '/welcome' },
   { path: '*', layout: false, component: './404' },
 ];
