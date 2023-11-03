@@ -9,6 +9,7 @@
   },
   { path: '/', redirect: '/add/chart' },
   { path: '/add/chart', name: '智能分析', icon: 'BarChartOutlined', component: './AddChart' },
+  { path: '/my/chart', name: '我的图表', icon: 'DotChartOutlined', component: './MyChart' },
   {
     path: '/admin',
     icon: 'crown',
