@@ -24,7 +24,10 @@ const MyChart: React.FC = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const res = await listMyChartVOByPageUsingPOST(searchParams);
+      const res = await listMyChartVOByPageUsingPOST({
+        ...searchParams,
+        userId: currentUser?.id,
+      });
       if (res.data) {
         setChartList(res.data.records ?? []);
         setTotal(res.data.total ?? 0);

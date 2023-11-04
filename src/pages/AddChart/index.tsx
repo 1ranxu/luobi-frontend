@@ -79,7 +79,7 @@ const AddChart: React.FC = () => {
 
               <Form.Item name="chartType" label="图表类型">
                 <Select
-                  placeholder="Please select a chartType"
+                  placeholder="请选择图表类型"
                   options={[
                     { value: '折线图', label: '折线图' },
                     { value: '柱状图', label: '柱状图' },
