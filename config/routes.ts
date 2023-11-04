@@ -9,7 +9,7 @@
   },
   { path: '/', redirect: '/add/chart' },
   { path: '/add/chart', name: '智能分析', icon: 'BarChartOutlined', component: './AddChart' },
-  { path: '/add/chart/async', name: '智能分析（异步）', icon: 'BarChartOutlined', component: './AddChartAsync' },
+  { path: '/add/chart_async', name: '智能分析（异步）', icon: 'BarChartOutlined', component: './AddChartAsync' },
   { path: '/my/chart', name: '我的图表', icon: 'DotChartOutlined', component: './MyChart' },
   {
     path: '/admin',

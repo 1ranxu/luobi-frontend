@@ -1,6 +1,5 @@
 // @ts-ignore
 /* eslint-disable */
-// @ts-ignore
 import { request } from '@umijs/max';
 
 /** Update an existing pet PUT /pet */

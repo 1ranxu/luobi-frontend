@@ -1,6 +1,5 @@
 // @ts-ignore
 /* eslint-disable */
-// @ts-ignore
 import { request } from '@umijs/max';
 
 /** Create user This can only be done by the logged in user. 返回值: successful operation POST /user */

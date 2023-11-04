@@ -1,6 +1,5 @@
 // @ts-ignore
 /* eslint-disable */
-// @ts-ignore
 import { request } from '@umijs/max';
 
 /** Returns pet inventories by status Returns a map of status codes to quantities GET /store/inventory */

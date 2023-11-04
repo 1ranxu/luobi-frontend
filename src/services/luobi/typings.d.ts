@@ -1,4 +1,9 @@
 declare namespace API {
+  type addUsingGETParams = {
+    /** name */
+    name?: string;
+  };
+
   type BaseResponseBIResponse_ = {
     code?: number;
     data?: BIResponse;
@@ -93,12 +98,14 @@ declare namespace API {
     chartName?: string;
     chartType?: string;
     createTime?: string;
+    execMessage?: string;
     genChart?: string;
     genSummary?: string;
     goal?: string;
     id?: number;
     isDelete?: number;
     rawData?: string;
+    status?: string;
     updateTime?: string;
     userId?: number;
   };
