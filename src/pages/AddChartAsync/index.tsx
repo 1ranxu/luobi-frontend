@@ -1,6 +1,6 @@
 import { UploadOutlined } from '@ant-design/icons';
 
-import { genChartByAIUsingPOST } from '@/services/luobi/chartController';
+import { genChartByAIAsyncUsingPOST } from '@/services/luobi/chartController';
 import { Button, Card, Form, message, Select, Space, Upload } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import TextArea from 'antd/es/input/TextArea';
@@ -30,7 +30,7 @@ const AddChartAsync: React.FC = () => {
       file: undefined,
     };
     try {
-      const res = await genChartByAIUsingPOST(params, {}, values.file.file.originFileObj);
+      const res = await genChartByAIAsyncUsingPOST(params, {}, values.file.file.originFileObj);
       if (!res.data) {
         message.error('分析失败');
       } else {

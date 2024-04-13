@@ -1,6 +1,6 @@
 import { UploadOutlined } from '@ant-design/icons';
 
-import { genChartByAIUsingPOST } from '@/services/luobi/chartController';
+import { genChartByAISyncUsingPOST } from '@/services/luobi/chartController';
 import { Button, Card, Col, Divider, Form, message, Row, Select, Space, Spin, Upload } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import ReactECharts from 'echarts-for-react';
@@ -33,14 +33,14 @@ const AddChart: React.FC = () => {
       file: undefined,
     };
     try {
-      const res = await genChartByAIUsingPOST(params, {}, values.file.file.originFileObj);
+      const res = await genChartByAISyncUsingPOST(params, {}, values.file.file.originFileObj);
       if (!res.data) {
         message.error('分析失败');
       } else {
         message.success('分析成功');
         const chartOption = JSON.parse(res.data.genChart ?? '');
         if (!chartOption) {
-          throw new Error('图表代码解析错误')
+          throw new Error('图表代码解析错误');
         } else {
           setChart(res.data);
           setOption(chartOption);
